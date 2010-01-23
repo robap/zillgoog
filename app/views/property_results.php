@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Zillow/Google Masher</title>
+        <title>Zillow-Google Masher</title>
         <link href="css/custom-theme/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <!--[if lte IE 7]>
@@ -63,7 +63,7 @@
 
             <div id="header">
                 <div id="logo">
-                    <a href="<?php echo dirname($_SERVER['REQUEST_URI']) ?>"><span>ZILLOW / GOOGLE</span> MASHER</a>
+                    <a href="<?php echo htmlspecialchars(dirname($_SERVER['REQUEST_URI'])) ?>"><span>ZILLOW / GOOGLE</span> MASHER</a>
                 </div>
             </div>
 
@@ -225,5 +225,18 @@
         </div>
 <?php // dump($primary_property) ?>
         <div id="dia"><div id="street_view"></div></div>
+        <?php if( $ga_enabled ) : ?>
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+                    try {
+                            var pageTracker = _gat._getTracker("<?php echo $ga_tracker_key ?>");
+                            // Cookied already:
+                            pageTracker._trackPageview();
+                    } catch(err) {}
+            </script>
+        <?php endif; ?>
     </body>
 </html>

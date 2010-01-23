@@ -94,6 +94,10 @@ sup {
     color: #ff5816;
 }
 
+#demo_text{
+    font-size: 18px;
+}
+
 #search_form_container {
     width: 100%;
     height: 50px;

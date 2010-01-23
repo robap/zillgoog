@@ -6,6 +6,7 @@
  */
 $config = array(
     'google_api_key'        => '',
+    'google_tracker_key'    => '',
     'zillow_api_key'        => '',
     'pillow_install'        => '../pillow/'
 );
