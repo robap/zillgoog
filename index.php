@@ -57,7 +57,7 @@ $address = htmlspecialchars( $_GET['address'] );
 //    one) in a format that can be used to query the Zillow service.
 // 2) Provides the first Placemark (along with coordinates) neeeded for our
 //    map.
-$gc                 = new Google_Geocoder( $google_api_key );
+$gc                 = new Google_Geocoder( );
 $primary_placemark  = $gc->geocode( $address );
 
 //The google geocode service has either found the supplied addres or not. We
