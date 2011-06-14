@@ -11,18 +11,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Zillow-Google Masher</title>
-        <link href="css/custom-theme/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <!--[if lte IE 7]>
         <link rel="stylesheet" type="text/css" href="css/style_ie.css" />
         <![endif]-->
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/jquery.watermark.min.js"></script>
         <script type="text/javascript" src="js/latnlng.js"></script>
         <script type="text/javascript" src="js/zillgoog.js"></script>
-        <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=<?php echo $google_api_key ?>" type="text/javascript"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#address').watermark('Enter Address and Press Enter');
@@ -33,7 +31,6 @@
                 //map_initialize( pm );
                 zg = new zillgoog.map(pm);
                 zg.addComparables( comps );
-                zg.enableStreetView( 'dia', 'street_view' );
 
                 //Apply a row click effect
                 $('#comps table tbody tr').each(function(){
@@ -50,12 +47,7 @@
                     });
                 });
                 
-            })
-
-            $(document).unload(function(){
-                GUnload();
             });
-            
         </script>
     </head>
     <body>

@@ -6,13 +6,11 @@
  */
 class Google_Geocoder
 {
-    private $_key;
-
     private $_addresses = array();
 
-    public function __construct( $key )
+    public function __construct()
     {
-        $this->_key = $key;
+      
     }
 
     /**
@@ -43,13 +41,9 @@ class Google_Geocoder
      */
     private function _getUri( $address )
     {
-        $uri  = "http://maps.google.com/maps/geo?";
-        $uri .= "q=" . urlencode($address);
-        $uri .= "&key=" . $this->_key;
+        $uri  = "http://maps.googleapis.com/maps/api/geocode/json?";
+        $uri .= "address=" . urlencode($address);
         $uri .= "&sensor=false";
-        $uri .= "&output=json";
         return $uri;
     }
 }
-
-?>

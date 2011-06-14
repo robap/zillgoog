@@ -15,7 +15,6 @@ include $config['pillow_install'] . 'lib/pillow.php';
 
 //Initialize page variables
 $address            = '';
-$google_api_key     = $config['google_api_key'];
 $ga_tracker_key     = $config['google_tracker_key'];
 $chart_url          = '';
 $sidebar_title      = '';
@@ -80,7 +79,7 @@ try {
     //$search will be an array with 1 or more Pillow_Property objects. Exact
     // matches will be found at $search[0]
     $search = $pf->findDeepProperties(
-        $primary_placemark->street,
+        $primary_placemark->streetNumber . ' ' . $primary_placemark->street,
         $primary_placemark->zip
     );
     //dump($search);

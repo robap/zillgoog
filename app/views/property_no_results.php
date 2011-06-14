@@ -11,14 +11,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Zillow-Google Masher</title>
-        <link href="css/custom-theme/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <!--[if lte IE 7]>
         <link rel="stylesheet" type="text/css" href="css/style_ie.css" />
         <![endif]-->
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/jquery.watermark.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){

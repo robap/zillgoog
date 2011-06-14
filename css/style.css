@@ -204,11 +204,6 @@ div.map_address div.options span {
     margin-right: 3px;
 }
 
-div#street_view {
-    width: 100%;
-    height: 100%;
-}
-
 img.zillow {
     border: none;
 }

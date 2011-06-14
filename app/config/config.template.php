@@ -5,7 +5,6 @@
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 $config = array(
-    'google_api_key'        => '',
     'google_tracker_key'    => '',
     'zillow_api_key'        => '',
     'pillow_install'        => '../pillow/'

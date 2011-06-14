@@ -12,14 +12,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Zillow-Google Masher</title>
-        <link href="css/custom-theme/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <!--[if lte IE 7]>
         <link rel="stylesheet" type="text/css" href="css/style_ie.css" />
         <![endif]-->
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/jquery.watermark.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
@@ -113,12 +111,6 @@ $ mv robap-pillow-3cc404a pillow
                                 </a>
                             </li>
                             <li>
-                                Get your Google maps api key
-                                <a href="http://code.google.com/apis/maps/signup.html">
-                                    here
-                                </a>
-                            </li>
-                            <li>
                                 In the extracted source, copy the file:
                                 app/config/config.template.php
                                 to app/config/config.php
@@ -129,13 +121,12 @@ $ cp app/config/config.template.php app/config/config.php
                                 </pre>
                             </li>
                             <li>
-                                Add your Zillow and Google keys to app/config/config.php and
+                                Add your Zillow key to app/config/config.php and
                                 add the path to the pillow library.
                             </li>
                             <li class="no_style">
                                 <pre>
 $config = array(
-    'google_api_key'        => 'place your google api key here',
     'zillow_api_key'        => 'place your zillow api key here',
     'pillow_install'        => '/path/to/pillow/'
 );
