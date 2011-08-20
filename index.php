@@ -7,15 +7,32 @@
  
 error_reporting(E_ALL);
 
+if(array_key_exists('GOOGLE_TRACKER_KEY', $_SERVER)) {
+  $google_tracker_key = $_SERVER['GOOGLE_TRACKER_KEY'];
+} else {
+  $google_tracker_key = '';
+}
+
+if(array_key_exists('ZILLOW_API_KEY', $_SERVER)) {
+  $zillow_api_key = $_SERVER['ZILLOW_API_KEY'];
+} else {
+  $zillow_api_key = '';
+}
+
+if(array_key_exists('PILLOW_INSTALL', $_SERVER)) {
+  $pillow_install = $_SERVER['PILLOW_INSTALL'] . 'lib/pillow.php';
+} else {
+  $pillow_install = 'app/lib/pillow.php';
+}
+
 include 'app/lib/functions.php';
 include 'app/lib/Geocoder.php';
 include 'app/lib/Placemark.php';
-include 'app/config/config.php';
-include $config['pillow_install'] . 'lib/pillow.php';
+include $pillow_install;
 
 //Initialize page variables
 $address            = '';
-$ga_tracker_key     = $config['google_tracker_key'];
+$ga_tracker_key     = $google_tracker_key;
 $chart_url          = '';
 $sidebar_title      = '';
 $map                = '';
@@ -28,7 +45,7 @@ $view_files         = array(
     'no_results' => 'app/views/property_no_results.php'
 );
 
-if( strlen(trim($config['google_tracker_key'])) > 0 )
+if( strlen(trim($google_tracker_key)) > 0 )
     $ga_enabled = TRUE;
 else
     $ga_enabled = FALSE;
@@ -73,7 +90,7 @@ if( FALSE === $primary_placemark->isValid() )
 //Since the geocode found a proper placemark, attempt to get a zillow property
 // result. We'll start by creating a factory which can be used to create
 // other objects from the Zillow service.
-$pf = new Pillow_Factory( $config['zillow_api_key'] );
+$pf = new Pillow_Factory( $zillow_api_key );
 
 try {
     //$search will be an array with 1 or more Pillow_Property objects. Exact

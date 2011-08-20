@@ -111,25 +111,12 @@ $ mv robap-pillow-3cc404a pillow
                                 </a>
                             </li>
                             <li>
-                                In the extracted source, copy the file:
-                                app/config/config.template.php
-                                to app/config/config.php
+                                Set your Zillow key and path to the pillow library.
                             </li>
                             <li class="no_style">
                                 <pre>
-$ cp app/config/config.template.php app/config/config.php
-                                </pre>
-                            </li>
-                            <li>
-                                Add your Zillow key to app/config/config.php and
-                                add the path to the pillow library.
-                            </li>
-                            <li class="no_style">
-                                <pre>
-$config = array(
-    'zillow_api_key'        => 'place your zillow api key here',
-    'pillow_install'        => '/path/to/pillow/'
-);
+$_SERVER['ZILLOW_API_KEY'] = 'your zillow key';
+$_SERVER['PILLOW_INSTALL'] = 'path/to/pillow/lib';
                                 </pre>
                             </li>
                         </ul>
