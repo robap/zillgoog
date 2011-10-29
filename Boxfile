@@ -1,1 +1,5 @@
-php_extensions: [curl]
+web1:
+  name: zillgoog
+  document_root: /www
+  php_extensions: 
+    - curl

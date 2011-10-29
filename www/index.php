@@ -22,12 +22,12 @@ if(array_key_exists('ZILLOW_API_KEY', $_SERVER)) {
 if(array_key_exists('PILLOW_INSTALL', $_SERVER)) {
   $pillow_install = $_SERVER['PILLOW_INSTALL'] . 'lib/pillow.php';
 } else {
-  $pillow_install = 'app/lib/pillow.php';
+  $pillow_install = '../app/lib/pillow.php';
 }
 
-include 'app/lib/functions.php';
-include 'app/lib/Geocoder.php';
-include 'app/lib/Placemark.php';
+include '../app/lib/functions.php';
+include '../app/lib/Geocoder.php';
+include '../app/lib/Placemark.php';
 include $pillow_install;
 
 //Initialize page variables
@@ -40,9 +40,9 @@ $primary_placemark  = new stdClass;
 $comps              = array();
 $comp_placemarks    = array();
 $view_files         = array(
-    'begin'      => 'app/views/property_begin.php',
-    'results'    => 'app/views/property_results.php',
-    'no_results' => 'app/views/property_no_results.php'
+    'begin'      => '../app/views/property_begin.php',
+    'results'    => '../app/views/property_results.php',
+    'no_results' => '../app/views/property_no_results.php'
 );
 
 if( strlen(trim($google_tracker_key)) > 0 )
